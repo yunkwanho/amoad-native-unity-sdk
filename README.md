@@ -1,1 +1,49 @@
-# amoad-native-unity-sdk
+<div align="center">
+<img width="172" height="61" src="http://www.amoad.com/images/logo.png">
+</div>
+
+# AMoAd Native Demo for Unity
+
+<img width="160" height="284" src="docs/res/ScreenShot01.png">
+<img width="320" src="docs/res/ScreenShot03.png">
+
+## Introduction
+
+ネイティブ広告のスタイルを管理画面よりHTML+CSSでデザインできます（HTMLコードの画面キャプチャは例です。実際にはアプリのデザインに合わせたコードを書きます）。
+
+## Requirements
+
+Unity5.3.1f1 or later
+
+## Installing
+
+[ZIPをダウンロード](https://github.com/amoad/amoad-native-unity-sdk/archive/master.zip)
+
+## Usage
+
+管理画面から取得したsidをScripts/ClickHandler.csのSIDに設定する。tagは複数の広告を区別するための任意文字列です。
+
+```cs
+// [SDK] 管理画面から取得したsidを入力してください
+private const string sid = "62056d310111552c000000000000000000000000000000000000000000000000";
+private const string tag = "Ad01";
+```
+
+loadメソッドに以下のJSON文字列を渡すことで、広告の枠線を表示することができます。
+
+<img width="160" height="284" src="docs/res/ScreenShot01D.png">
+
+```cs
+AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
+  "{\"border\": \"dotted 2px #0000ff\"}");
+```
+
+## API
+
+[AMoAd Native Unity API](AMoAdNativeUnityDemo/Assets/Plugins/AMoAdNativeUnityPlugin.cs)
+
+## Project Settings
+
+### Android設定例
+
+<img width="640" src="docs/res/ScreenShot04.png">

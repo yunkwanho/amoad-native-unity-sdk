@@ -25,8 +25,8 @@ Unity5.3.1f1 or later
 
 ```cs
 // [SDK] 管理画面から取得したsidを入力してください
-private const string sid = "62056d310111552c000000000000000000000000000000000000000000000000";
-private const string tag = "Ad01";
+private const string ad_sid = "62056d310111552c000000000000000000000000000000000000000000000000";
+private const string ad_tag = "Ad01";
 ```
 
 loadメソッドに以下のJSON文字列を渡すことで、広告の枠線を表示することができます。
@@ -45,5 +45,9 @@ AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
 ## Project Settings
 
 ### Android設定例
+
+1. UnityでAndroidプロジェックトをExportする。
+2. ExportされたAndroidプロジェックトでGooglePlayerServiceを設定する。
+   ([GooglePlayerService設定方法](https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project))
 
 <img width="640" src="docs/res/ScreenShot04.png">

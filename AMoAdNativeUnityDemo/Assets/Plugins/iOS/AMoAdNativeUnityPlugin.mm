@@ -104,9 +104,9 @@ void amoad_native_load_with_option(const char *cSid, const char *cTag, int x, in
   CGRect frame = CGRectMake(x, y, width, height);
   NSString *option = string_with_cstring(cOption);
   NSData *data = [option dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *error;
+  NSError *error = nil;
   NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-  if (error) {
+  if (error != nil) {
     dic = @{};
   }
   [AMoAdNative loadWithSid:sid tag:tag frame:frame completion:nil option:dic];

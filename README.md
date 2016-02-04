@@ -13,7 +13,8 @@
 
 ## Requirements
 
-Unity5.3.1f1 or later
+Unity4.x or later
+>デモアプリはUnity5.3.1f1で動作確認ずみです。
 
 ## Installing
 

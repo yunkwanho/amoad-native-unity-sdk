@@ -2,35 +2,39 @@
 using System.Collections;
 
 public class ClickHandler : MonoBehaviour {
-	private const string sid = "62056d310111552c000000000000000000000000000000000000000000000000";
-	private const string tag = "Ad01";
+	private const string ad_sid = "62056d310111552c000000000000000000000000000000000000000000000000";
+	private const string ad_tag = "Ad01";
 
 	public void onShowBtnClick() {
 		Debug.Log("show");
-		AMoAdNativeUnityPlugin.Show(sid, tag);
+		AMoAdNativeUnityPlugin.Show(ad_sid, ad_tag);
 	}
 	public void onHideBtnClick() {
 		Debug.Log("hide");
-		AMoAdNativeUnityPlugin.Hide(sid, tag);
+		AMoAdNativeUnityPlugin.Hide(ad_sid, ad_tag);
 	}
 	public void onLoadBtnClick() {
 		Debug.Log("load");
-		AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400);
+#if UNITY_ANDROID
+		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 400, 400);
+#else
+		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 140, 120);
+#endif
 	}
 	public void onRemoveBtnClick() {
 		Debug.Log("remove");
-		AMoAdNativeUnityPlugin.Remove(sid, tag);
+		AMoAdNativeUnityPlugin.Remove(ad_sid, ad_tag);
 	}
 	public void onReloadBtnClick() {
 		Debug.Log("reload");
-		AMoAdNativeUnityPlugin.Reload(sid, tag);
+		AMoAdNativeUnityPlugin.Reload(ad_sid, ad_tag);
 	}
 	public void onStartBtnClick() {
 		Debug.Log("start");
-		AMoAdNativeUnityPlugin.StartRotation(sid, tag, 10);
+		AMoAdNativeUnityPlugin.StartRotation(ad_sid, ad_tag, 10);
 	}
 	public void onStopBtnClick() {
 		Debug.Log("stop");
-		AMoAdNativeUnityPlugin.StopRotation(sid, tag);
+		AMoAdNativeUnityPlugin.StopRotation(ad_sid, ad_tag);
 	}
 }

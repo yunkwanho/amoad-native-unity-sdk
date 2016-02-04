@@ -44,6 +44,17 @@ AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
 
 ## Project Settings
 
+### iOS設定例
+
+1. UnityでiOSプロジェックトをExportする。
+2. 必要なFrameworkを追加する。
+ - StoreKit.framework
+ - ImageIO.framework
+ - AdSupport.framework
+3. libAMoAd.a が自動的に追加されていることを確認する。
+
+<img width="640" src="docs/res/ScreenShot05.png">
+
 ### Android設定例
 
 1. UnityでAndroidプロジェックトをExportする。

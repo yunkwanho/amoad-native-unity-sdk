@@ -59,7 +59,10 @@ AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
 ### Android設定例
 
 1. UnityでAndroidプロジェックトをExportする。
-2. ExportされたAndroidプロジェックトでGooglePlayerServiceを設定する。
+2. UnityPluginActivity/libs/に以下のファイルがあることを確認する。
+ - AMoAd.jar
+ - AMoAdUnityPlugin.jar
+3. GooglePlayerServiceを設定する。
    ([GooglePlayerService設定方法](https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project))
 
 <img width="640" src="docs/res/ScreenShot04.png">

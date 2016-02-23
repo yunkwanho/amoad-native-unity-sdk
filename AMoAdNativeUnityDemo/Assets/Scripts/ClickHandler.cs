@@ -16,7 +16,7 @@ public class ClickHandler : MonoBehaviour {
 	public void onLoadBtnClick() {
 		Debug.Log("load");
 #if UNITY_ANDROID
-		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 400, 400);
+		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 140, 120);
 #else
 		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 140, 120);
 #endif

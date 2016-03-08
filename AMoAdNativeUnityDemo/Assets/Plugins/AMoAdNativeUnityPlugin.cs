@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 
 public class AMoAdNativeUnityPlugin {
-	public const string VersionNo = "1.0.1";
+	public const string VersionNo = "1.0.2";
 
 	#if UNITY_IOS
 	[DllImport("__Internal")]
@@ -167,9 +167,29 @@ public class AMoAdNativeUnityPlugin {
 		#if UNITY_IOS
 		amoad_native_set_network_timeout_seconds(seconds:seconds);
 		#elif UNITY_ANDROID
-		AndroidPlugin.CallStatic("setNetworkTimeoutSeconds", seconds);
+		//AndroidPlugin.CallStatic("setNetworkTimeoutSeconds", seconds);
 		#endif
 	}
+
+    /// <summary>
+    /// 開発用
+    /// </summary>
+    /// <param name="seconds"></param>
+    public static void SetConnectTimeoutSeconds(int seconds) {
+        #if UNITY_ANDROID
+        AndroidPlugin.CallStatic("setConnectTimeoutSeconds", seconds);
+        #endif
+    }
+
+    /// <summary>
+    /// 開発用
+    /// </summary>
+    /// <param name="seconds"></param>
+    public static void SetReadTimeoutSeconds(int seconds) {
+        #if UNITY_ANDROID
+        AndroidPlugin.CallStatic("setReadTimeoutSeconds", seconds);
+        #endif
+    }
 	
 	/// <summary>
 	/// 広告をロードする (開発用)

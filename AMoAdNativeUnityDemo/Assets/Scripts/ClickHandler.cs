@@ -16,6 +16,8 @@ public class ClickHandler : MonoBehaviour {
 	public void onLoadBtnClick() {
 		Debug.Log("load");
 #if UNITY_ANDROID
+		AMoAdNativeUnityPlugin.SetConnectTimeoutSeconds(5);
+		AMoAdNativeUnityPlugin.SetReadTimeoutSeconds(5);
 		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 140, 120);
 #else
 		AMoAdNativeUnityPlugin.Load(ad_sid, ad_tag, 100, 100, 140, 120);

@@ -27,7 +27,6 @@ extern "C" {
   void amoad_native_stop_rotation(const char *cSid, const char *cTag);
 
   void amoad_native_set_html_url_string(const char *cHtmlUrlString);
-  void amoad_native_set_network_timeout_seconds(int seconds);
   void amoad_native_load_with_option(const char *cSid, const char *cTag, int x, int y, int width, int height, const char *cOption);
 
 #ifdef __cplusplus
@@ -92,10 +91,6 @@ void amoad_native_stop_rotation(const char *cSid, const char *cTag) {
 void amoad_native_set_html_url_string(const char *cHtmlUrlString) {
   NSString *htmlUrlString = string_with_cstring(cHtmlUrlString);
   [AMoAdNative setHtmlUrlString:htmlUrlString];
-}
-
-void amoad_native_set_network_timeout_seconds(int seconds) {
-  [AMoAdNative setNetworkTimeoutSeconds:seconds];
 }
 
 void amoad_native_load_with_option(const char *cSid, const char *cTag, int x, int y, int width, int height, const char *cOption) {

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 
 public class AMoAdNativeUnityPlugin {
-	public const string VersionNo = "1.0.0";
+	public const string VersionNo = "1.0.1";
 
 	#if UNITY_IOS
 	[DllImport("__Internal")]
@@ -29,9 +29,6 @@ public class AMoAdNativeUnityPlugin {
 	[DllImport("__Internal")]
 	private static extern void amoad_native_set_html_url_string(string htmlUrlString);
 
-	[DllImport("__Internal")]
-	private static extern void amoad_native_set_network_timeout_seconds(int seconds);
-	
 	[DllImport("__Internal")]
 	private static extern void amoad_native_load_with_option(string sid, string tag, int x, int y, int width, int height, string option);
 	#elif UNITY_ANDROID
@@ -156,18 +153,6 @@ public class AMoAdNativeUnityPlugin {
 		amoad_native_set_html_url_string(htmlUrlString:htmlUrlString);
 		#elif UNITY_ANDROID
 		AndroidPlugin.CallStatic("setHtmlUrlString", htmlUrlString);
-		#endif
-	}
-	
-	/// <summary>
-	/// 開発用
-	/// </summary>
-	/// <param name="seconds"></param>
-	public static void SetNetworkTimeoutSeconds(int seconds) {
-		#if UNITY_IOS
-		amoad_native_set_network_timeout_seconds(seconds:seconds);
-		#elif UNITY_ANDROID
-		AndroidPlugin.CallStatic("setNetworkTimeoutSeconds", seconds);
 		#endif
 	}
 	

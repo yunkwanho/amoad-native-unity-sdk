@@ -47,6 +47,8 @@ AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
 
 ### iOS設定例
 
+[ATS (App Transport Security) を抑制する](https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Install/Install.asciidoc#ats-app-transport-security-を抑制する)
+
 1. UnityでiOSプロジェックトをExportする。
 2. 必要なFrameworkを追加する。
  - StoreKit.framework

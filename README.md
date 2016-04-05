@@ -35,7 +35,7 @@ loadメソッドに以下のJSON文字列を渡すことで、広告の枠線を
 <img width="160" height="284" src="docs/res/ScreenShot01D.png">
 
 ```cs
-AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 400, 400,
+AMoAdNativeUnityPlugin.Load(sid, tag, 100, 100, 140, 120,
   "{\"border\": \"dotted 2px #0000ff\"}");
 ```
 
